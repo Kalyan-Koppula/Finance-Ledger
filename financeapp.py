@@ -53,7 +53,7 @@ class financeapp(MDApp):  # NOQA: N801
         self.title = "Finance Ledger"
         self.icon = "finance"
 
-        self.theme_cls.colors = colors
+        #self.theme_cls.colors = colors
         self.theme_cls.primary_palette = "Green"
 
         self.theme_cls.accent_palette = "Green"
