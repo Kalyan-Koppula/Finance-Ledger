@@ -1,0 +1,45 @@
+#: import DailyTab libs.uix.baseclass.daily_tab.DailyTab
+#: import CustomersTab libs.uix.baseclass.customers_tab.CustomersTab
+#: import AnalyticsTab libs.uix.baseclass.analytics_tab.AnalyticsTab
+
+#: import gch kivy.utils.get_color_from_hex
+
+<HomeScreen>
+
+    MDBoxLayout:
+        id: container
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "Finance Ledger"
+            specific_text_color: 1, 1, 1, 1
+            right_action_items: [["magnify", lambda x: x]]
+
+        MDTabs:
+            default_tab: 1
+            indicator_color: 1, 1, 1, 1
+            tab_hint_x: True
+            text_color_normal: 1., 1., 1., .5
+            text_color_active: 1, 1, 1, 1
+            tab_indicator_anim: True
+            tab_indicator_height: dp(2)
+            on_tab_switch: root.on_tab_switch(*args)
+
+            DailyTab:
+                icon: "home"
+            CustomersTab:
+                icon: "account-group"
+            AnalyticsTab:
+                icon: "finance"
+
+    AnchorLayout:
+        anchor_x: "right"
+        anchor_y: "bottom"
+        padding: "20dp"
+
+        MDFloatingActionButton:
+            id: float_btn
+            icon: "refresh"
+            text_color: .9, 1, 1, 1  # using 1, 1, 1, 1 or ffffff not works, I don't know why
+            md_bg_color: app.theme_cls.accent_color
+            on_press: root.on_press()
