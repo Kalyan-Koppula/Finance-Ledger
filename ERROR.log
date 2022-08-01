@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "x:\Python Projects\Kivy_MD\FinanceApp\main.py", line 29, in <module>
+    financeapp().run()
+  File "F:\Python310\lib\site-packages\kivy\app.py", line 955, in run
+    runTouchApp()
+  File "F:\Python310\lib\site-packages\kivy\base.py", line 574, in runTouchApp
+    EventLoop.mainloop()
+  File "F:\Python310\lib\site-packages\kivy\base.py", line 339, in mainloop
+    self.idle()
+  File "F:\Python310\lib\site-packages\kivy\base.py", line 379, in idle
+    Clock.tick()
+  File "F:\Python310\lib\site-packages\kivy\clock.py", line 733, in tick
+    self.post_idle(ts, self.idle())
+  File "F:\Python310\lib\site-packages\kivy\clock.py", line 776, in post_idle
+    self._process_events()
+  File "kivy\_clock.pyx", line 620, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 653, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 649, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 218, in kivy._clock.ClockEvent.tick
+  File "x:\Python Projects\Kivy_MD\FinanceApp\libs\uix\baseclass\root.py", line 46, in add_screens
+    screen_object = eval(screen_details["factory"])  # adding it to Factory
+  File "<string>", line 1, in <module>
+  File "x:\Python Projects\Kivy_MD\FinanceApp\libs\uix\baseclass\add_customer_screen.py", line 9, in __init__
+    super().__init__(**kwargs)
+  File "F:\Python310\lib\site-packages\kivy\uix\relativelayout.py", line 274, in __init__
+    super(RelativeLayout, self).__init__(**kw)
+  File "F:\Python310\lib\site-packages\kivy\uix\floatlayout.py", line 65, in __init__
+    super(FloatLayout, self).__init__(**kwargs)
+  File "F:\Python310\lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\Python310\lib\site-packages\kivymd\uix\behaviors\backgroundcolor_behavior.py", line 220, in __init__
+    super().__init__(**kwargs)
+  File "F:\Python310\lib\site-packages\kivymd\uix\behaviors\backgroundcolor_behavior.py", line 178, in __init__
+    super().__init__(**kwarg)
+  File "F:\Python310\lib\site-packages\kivymd\uix\behaviors\elevation.py", line 847, in __init__
+    super().__init__(**kwargs)
+  File "F:\Python310\lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\Python310\lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\Python310\lib\site-packages\kivy\lang\builder.py", line 540, in apply
+    self._apply_rule(
+  File "F:\Python310\lib\site-packages\kivy\lang\builder.py", line 662, in _apply_rule
+    self._apply_rule(
+  File "F:\Python310\lib\site-packages\kivy\lang\builder.py", line 662, in _apply_rule
+    self._apply_rule(
+  File "F:\Python310\lib\site-packages\kivy\lang\builder.py", line 662, in _apply_rule
+    self._apply_rule(
+  File "F:\Python310\lib\site-packages\kivy\lang\builder.py", line 658, in _apply_rule
+    child = cls(__no_builder=True)
+  File "F:\Python310\lib\site-packages\kivymd\uix\textfield.py", line 981, in __init__
+    self.error_color = self.theme_cls.error_color
+  File "kivy\properties.pyx", line 531, in kivy.properties.Property.__get__
+  File "kivy\properties.pyx", line 1658, in kivy.properties.AliasProperty.get
+  File "F:\Python310\lib\site-packages\kivymd\theming.py", line 824, in _get_error_color
+    return get_color_from_hex(self.colors["Red"]["A700"])
+KeyError: 'Red'
