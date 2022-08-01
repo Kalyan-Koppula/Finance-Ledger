@@ -11,6 +11,7 @@
         orientation: "vertical"
 
         MDToolbar:
+            id: "tool_bar"
             title: "Finance Ledger"
             specific_text_color: 1, 1, 1, 1
             right_action_items: [["magnify", lambda x: x]]
@@ -41,5 +42,4 @@
             id: float_btn
             icon: "refresh"
             text_color: .9, 1, 1, 1  # using 1, 1, 1, 1 or ffffff not works, I don't know why
-            md_bg_color: app.theme_cls.accent_color
             on_press: root.on_press()
