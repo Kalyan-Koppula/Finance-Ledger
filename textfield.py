@@ -3,15 +3,40 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 
 KV = '''
-BoxLayout:
+MDBoxLayout:
     padding: "10dp"
+    spacing: "10dp"
+    orientation: "vertical"
 
-    MDTextField:
-        id: text_field_error
-        hint_text: "Helper text on error (press 'Enter')"
-        helper_text: "There will always be a mistake"
-        helper_text_mode: "on_error"
-        pos_hint: {"center_y": .5}
+    MDBoxLayout:
+        orientation: "horizontal"
+        padding: "10dp"
+        
+        MDIcon:
+            icon: "account"
+            size_hint_x: .25
+            pos_hint: {"center_y": .5,"center_x":1}
+
+        MDTextField:
+            id: text_field_error
+            hint_text: "Name"
+            pos_hint: {"center_y": .5}
+            mode: "rectangle"
+            size_hint_x: 0.75
+            padding_right: "20dp"
+    
+    MDBoxLayout:
+        orientation: "horizontal"
+        padding: "10dp"
+        
+        MDIcon:
+            icon: "cash-multiple"
+
+        MDTextField:
+            id: text_field_error
+            hint_text: "Amount"
+            pos_hint: {"center_y": .5}
+            mode: "rectangle"
 '''
 
 

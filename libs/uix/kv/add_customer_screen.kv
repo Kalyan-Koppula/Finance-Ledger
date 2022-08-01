@@ -1,18 +1,122 @@
 <AddCustomerScreen>
-
     MDBoxLayout:
         orientation: "vertical"
+        valign: "top"
 
         MDToolbar:
             title: "Add Customer"
             specific_text_color: 1, 1, 1, 1
             left_action_items: [["arrow-left", lambda x: root.manager.set_screen(name="home", side="right")]]
             right_action_items: [["check-bold", lambda x: x]]
-        
-        MDBoxLayout:
-            orientation: "vertical"
+        ScrollView:
 
-            MDLabel:
-                text: f"Add new customers here"
-                halign: "center"
-                markup: True
+            MDBoxLayout:
+                orientation: "vertical"
+                adaptive_height: True
+                padding: "15dp"
+                spacing: "10dp"
+
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    padding: "10dp"
+                    size_hint_y: None
+                    height: text_name.height
+                    MDIcon:
+                        icon: "account"
+                        size_hint_x: .2
+                        pos_hint: {"center_y": .5}
+
+                    MDTextField:
+                        id: text_name
+                        hint_text: "Name"
+                        pos_hint: {"center_y": .5}
+                        mode: "rectangle"
+                        size_hint_x: 0.75
+                
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    padding: "10dp"
+                    size_hint_y: None
+                    height: text_amount.height
+                    MDIcon:
+                        icon: "cash-multiple"
+                        size_hint_x: .2
+                        pos_hint: {"center_y": .5}
+
+                    MDTextField:
+                        id: text_amount
+                        hint_text: "Amount"
+                        input_filter: 'int'
+                        pos_hint: {"center_y": .5}
+                        mode: "rectangle"
+                        size_hint_x: 0.75
+                
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    padding: "10dp"
+                    size_hint_y: None
+                    height: text_date.height
+                    MDIcon:
+                        icon: "calendar"
+                        size_hint_x: .25
+                        pos_hint: {"center_y": .5}
+
+                    MDTextField:
+                        id: text_date
+                        hint_text: "Date given"
+                        input_type: "datetime"
+                        pos_hint: {"center_y": .5}
+                        mode: "rectangle"
+                        size_hint_x: 0.75
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    padding: "10dp"
+                    size_hint_y: None
+                    height: text_name.height
+                    MDIcon:
+                        icon: "account"
+                        size_hint_x: .25
+                        pos_hint: {"center_y": .5}
+
+                    MDTextField:
+                        id: text_name
+                        hint_text: "Name"
+                        pos_hint: {"center_y": .5}
+                        mode: "rectangle"
+                        size_hint_x: 0.75
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    padding: "10dp"
+                    size_hint_y: None
+                    height: text_name.height
+                    MDIcon:
+                        icon: "account"
+                        size_hint_x: .25
+                        pos_hint: {"center_y": .5}
+
+                    MDTextField:
+                        id: text_name
+                        hint_text: "Name"
+                        pos_hint: {"center_y": .5}
+                        mode: "rectangle"
+                        size_hint_x: 0.75
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    padding: "10dp"
+                    size_hint_y: None
+                    height: text_name.height
+                    MDIcon:
+                        icon: "account"
+                        size_hint_x: .25
+                        pos_hint: {"center_y": .5}
+
+                    MDTextField:
+                        id: text_name
+                        hint_text: "Name"
+                        pos_hint: {"center_y": .5}
+                        mode: "rectangle"
+                        size_hint_x: 0.75
