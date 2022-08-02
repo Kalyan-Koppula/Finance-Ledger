@@ -5,7 +5,8 @@ from kivy.core.window import Window
 from kivymd.app import MDApp
 from libs.uix.baseclass.root import Root
 
-Window.size = (400, 700)
+# if platform not in ["android", "ios"]:
+#     Window.size = (400, 700)
 
 # This is needed for supporting Windows 10 with OpenGL < v2.0
 if platform.system() == "Windows":
