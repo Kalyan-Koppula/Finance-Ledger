@@ -8,6 +8,8 @@ from libs.uix.baseclass.root import Root
 # if platform not in ["android", "ios"]:
 #     Window.size = (400, 700)
 
+Window.softinput_mode = 'below_target'
+
 # This is needed for supporting Windows 10 with OpenGL < v2.0
 if platform.system() == "Windows":
     os.environ["KIVY_GL_BACKEND"] = "angle_sdl2"
