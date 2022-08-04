@@ -35,10 +35,9 @@ Builder.load_string(
             theme_text_color: 'Secondary'
             adaptive_height: True
 
-    MDFloatingActionButton:
-        id: float_btn
-        icon: "check"
-        text_color: .9, 1, 1, 1  # using 1, 1, 1, 1 or ffffff not works, I don't know why
+    MDCheckbox:
+        size_hint_x: 0.2
+        pos_hint: {'center_x': .5, 'center_y': .5}
 """
 )
 

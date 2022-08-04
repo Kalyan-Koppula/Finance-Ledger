@@ -12,18 +12,15 @@ class HomeScreen(MDScreen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.current_tab = "home" 
-        self.ids.float_btn.disabled = True
 
     def on_tab_switch(self, *args):
         if args[1].icon == "home":
-            self.ids.float_btn.disabled = True
+            self.ids.float_btn.icon = "refresh"
             self.current_tab = "home"
         elif args[1].icon == "account-group":
-            self.ids.float_btn.disabled = False
             self.ids.float_btn.icon = "plus"
             self.current_tab = "customers"
         elif args[1].icon == "finance":
-            self.ids.float_btn.disabled = False
             self.ids.float_btn.icon = "calendar"
             self.current_tab = "analytics"
     
