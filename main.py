@@ -16,13 +16,13 @@ __version__ = "0.1"
 """
 Registering factories from factory.json.
 """
-# r = Factory.register
+r = Factory.register
 
-# with open("factory_registers.json") as fd:
-#     custom_widgets = json.load(fd)
-#     for module, _classes in custom_widgets.items():
-#         for _class in _classes:
-#             r(_class, module=module)
+with open("factory_registers.json") as fd:
+    custom_widgets = json.load(fd)
+    for module, _classes in custom_widgets.items():
+        for _class in _classes:
+            r(_class, module=module)
 
 
 try:
