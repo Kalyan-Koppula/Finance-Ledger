@@ -21,19 +21,27 @@ Builder.load_string(
     MDBoxLayout:
         orientation: 'vertical'
         pos_hint: {'center_y': .5}
-        spacing: dp(5)
+        spacing: dp(10)
         adaptive_height: True
 
         MDLabel:
-            text: root.text
+            id: name
+            text: root.name
             font_style: 'Subtitle1'
             adaptive_height: True
 
         MDLabel:
-            text: root.secondary_text
+            text: root.amount
             font_style: 'Body2'
             theme_text_color: 'Secondary'
             adaptive_height: True
+
+        MDTextField:
+            id: installment
+            text: root.installment
+            pos_hint: {"center_y": .5}
+            mode: "rectangle"
+            size_hint_x: 0.5
 
     MDCheckbox:
         size_hint_x: 0.2
@@ -44,9 +52,11 @@ Builder.load_string(
 
 class DailyCustomerListItem(RectangularRippleBehavior, MDBoxLayout):
 
-    text = StringProperty()
+    name = StringProperty()
 
-    secondary_text = StringProperty()
+    amount = StringProperty()
+
+    installment = StringProperty()
 
     image = StringProperty()
 

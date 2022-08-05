@@ -19,9 +19,9 @@ class DailyTab(FloatLayout, MDTabsBase):
 
         for i in data:
             user_data = {
-                "text": i,
-                "secondary_text": data[i]["message"],
-                "time": data[i]["time"],
+                "name": i,
+                "amount": data[i]["amount"],
+                "installment": data[i]["installment"],
                 "image": data[i]["image"],
             }
             self.users_data.append(user_data)
