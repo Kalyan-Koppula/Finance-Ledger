@@ -29,23 +29,26 @@ Builder.load_string(
             text: root.name
             font_style: 'Subtitle1'
             adaptive_height: True
-
-        MDLabel:
-            text: root.amount
-            font_style: 'Body2'
-            theme_text_color: 'Secondary'
+        
+        MDBoxLayout:
+            orientation: 'horizontal'
+            pos_hint: {'center_y': .5}
+            spacing: dp(5)
             adaptive_height: True
+        
+            MDLabel:
+                text: root.f_no
+                font_style: 'Body2'
+                theme_text_color: 'Secondary'
+                adaptive_height: True
 
-        MDTextField:
-            id: installment
-            text: root.installment
-            pos_hint: {"center_y": .5}
-            mode: "rectangle"
-            size_hint_x: 0.5
+            MDLabel:
+                text: root.amount
+                font_style: 'Body2'
+                theme_text_color: 'Secondary'
+                adaptive_height: True
 
-    MDCheckbox:
-        size_hint_x: 0.2
-        pos_hint: {'center_x': .5, 'center_y': .5}
+
 """
 )
 
@@ -56,9 +59,9 @@ class DailyCustomerListItem(RectangularRippleBehavior, MDBoxLayout):
 
     amount = StringProperty()
 
-    installment = StringProperty()
-
     image = StringProperty()
+
+    f_no = '123'
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
