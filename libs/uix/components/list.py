@@ -41,14 +41,15 @@ Builder.load_string(
                 font_style: 'Body2'
                 theme_text_color: 'Secondary'
                 adaptive_height: True
+                size_hint_x: 0.25
 
             MDLabel:
                 text: root.amount
                 font_style: 'Body2'
                 theme_text_color: 'Secondary'
                 adaptive_height: True
-
-
+                size_hint_x: 0.75
+            
 """
 )
 
