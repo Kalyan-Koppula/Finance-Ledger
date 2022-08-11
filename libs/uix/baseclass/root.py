@@ -4,6 +4,7 @@ import utils
 from kivy.clock import Clock
 from kivy.factory import Factory  # NOQA: F401
 from kivy.uix.screenmanager import ScreenManager
+from kivy.core.window import Window
 
 utils.load_kv("root.kv")
 
@@ -16,6 +17,7 @@ class Root(ScreenManager):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         Clock.schedule_once(self.add_screens)
+        Window.bind(on_keyboard = self.on_back_button)
         """
         Adding the screens to the Root (ScreenManager).
         """
@@ -54,3 +56,14 @@ class Root(ScreenManager):
     def set_screen(self, name, side="left"):
         self.transition.direction = side
         self.current = name
+
+    def on_back_button_callback(self):
+        if self.current != 'home':
+            self.set_screen('home')
+            return True
+        return False
+
+    def on_back_button(self,window,key,*args):
+        if key == 27:
+            return self.on_back_button_callback() 
+
