@@ -12,28 +12,62 @@ Builder.load_string(
     orientation: 'vertical'
     adaptive_size: True
 
-    MDLabel:
-        text: root.title
-        text_color: 1, 1, 1, 1
-        padding: [dp(5), dp(5)]
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': .5}
+        spacing: dp(5)
         adaptive_height: True
-
+        
         canvas.before:
             Color:
-                rgba: gch('3a3b3c')
-            Rectangle:
+                rgba: 1,1,1,1
+            RoundedRectangle:
                 size: self.size
                 pos: self.pos
+                radius: [10,10]
 
-    FitImage:
-        source: root.image
-        size_hint: None, None
-        width: btn_box.width
-        height: btn_box.width
+        MDLabel:
+            id: title
+            text: root.title
+            font_style: 'Subtitle1'
+            padding: [dp(5), dp(5)]
+            adaptive_height: True
+
+            canvas.before:
+                Color:
+                    rgba: self.theme_cls.accent_color
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            pos_hint: {'center_y': .5}
+            spacing: dp(5)
+            adaptive_height: True
+            
+            MDLabel:
+                text: root.f_no
+                padding: [dp(5), dp(5)]
+                adaptive_height: True
+            
+            MDLabel:
+                text: root.amount
+                padding: [dp(5), dp(5)]
+                adaptive_height: True
+
+        MDTextField:
+            hint_text: "Installment"
+            input_filter: 'int'
+            pos_hint: {"center_y": .5,"center_x": .5}
+            mode: "rectangle"
+            size_hint_x: 0.5
+
+
+
 
     MDBoxLayout:
         id: btn_box
-        md_bg_color: 1, 1, 1 , 1
         adaptive_height: True
         size_hint_x: None
         width: self.minimum_size[0] + dp(40)
@@ -65,9 +99,12 @@ class ProfilePreview(MDBoxLayout, BaseDialog):
 
     title = StringProperty()
 
-    image = StringProperty()
+    amount = StringProperty()
 
-    def fire(self, title, image):
+    f_no = '123'
+
+    def fire(self, title, f_no, amount):
         self.title = title
-        self.image = image
+        self.f_no = f_no
+        self.amount = amount
         self.open()
