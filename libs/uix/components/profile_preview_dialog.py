@@ -11,34 +11,28 @@ Builder.load_string(
     auto_dismiss: True
     orientation: 'vertical'
     adaptive_size: True
+    size_hint: 0.7,0.5
+    pos_hint: {'top':0.9}
+
+    MDToolbar:
+        title: root.title
+        font_style: 'Body2'
+        specific_text_color: 1, 1, 1, 1
+        right_action_items: [["check", lambda x: root.save_details()]]
 
     MDBoxLayout:
         orientation: 'vertical'
-        pos_hint: {'center_x': .5}
-        spacing: dp(5)
+        pos_hint: {"center_y": .5,"center_x": .5}
+        spacing: dp(10)
+        padding: [0,dp(20),0,dp(20)]
         adaptive_height: True
-        
+
         canvas.before:
             Color:
                 rgba: 1,1,1,1
-            RoundedRectangle:
+            Rectangle:
                 size: self.size
                 pos: self.pos
-                radius: [10,10]
-
-        MDLabel:
-            id: title
-            text: root.title
-            font_style: 'Subtitle1'
-            padding: [dp(5), dp(5)]
-            adaptive_height: True
-
-            canvas.before:
-                Color:
-                    rgba: self.theme_cls.accent_color
-                RoundedRectangle:
-                    size: self.size
-                    pos: self.pos
 
         MDBoxLayout:
             orientation: 'horizontal'
@@ -48,49 +42,35 @@ Builder.load_string(
             
             MDLabel:
                 text: root.f_no
+                halign: "center"
+                pos_hint: {"center_y": .5,"center_x": .5}
+                font_style: 'Subtitle1'
+                theme_text_color: 'Secondary'
                 padding: [dp(5), dp(5)]
                 adaptive_height: True
             
             MDLabel:
                 text: root.amount
+                halign: "center"
+                font_style: 'Subtitle1'
+                theme_text_color: 'Secondary'
                 padding: [dp(5), dp(5)]
                 adaptive_height: True
 
         MDTextField:
             hint_text: "Installment"
+            text: root.installment
             input_filter: 'int'
+            font_style: 'Body1'
+            theme_text_color: 'Secondary'
             pos_hint: {"center_y": .5,"center_x": .5}
             mode: "rectangle"
-            size_hint_x: 0.5
+            size_hint_x: 0.5   
 
 
 
 
-    MDBoxLayout:
-        id: btn_box
-        adaptive_height: True
-        size_hint_x: None
-        width: self.minimum_size[0] + dp(40)
 
-        Widget:
-
-        DialogIconButton:
-            icon: 'android-messages'
-
-        DialogIconButton:
-            icon: 'phone'
-
-        DialogIconButton:
-            icon: 'video'
-
-        DialogIconButton:
-            icon: 'information-outline'
-
-        Widget:
-
-<DialogIconButton@MDIconButton>
-    theme_text_color: 'Custom'
-    text_color: self.theme_cls.accent_color
 """
 )
 
@@ -101,10 +81,15 @@ class ProfilePreview(MDBoxLayout, BaseDialog):
 
     amount = StringProperty()
 
-    f_no = '123'
+    f_no = '#23'
+
+    installment = '100'
 
     def fire(self, title, f_no, amount):
         self.title = title
         self.f_no = f_no
         self.amount = amount
         self.open()
+
+    def save_details(self):
+        self.dismiss()

@@ -73,5 +73,5 @@ class DailyCustomerListItem(RectangularRippleBehavior, MDBoxLayout):
         super().__init__(**kwargs)
 
     def open_dialog(self):
-        ProfilePreview().fire(title=self.name, f_no=self.f_no, amount=self.amount)
+        ProfilePreview().fire(title=self.name, f_no='#'+self.f_no, amount='$'+self.amount)
 
