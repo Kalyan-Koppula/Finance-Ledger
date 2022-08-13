@@ -5,8 +5,8 @@ from kivy.core.window import Window
 from kivymd.app import MDApp
 from libs.uix.baseclass.root import Root
 
-if platform not in ["android", "ios"]:
-    Window.size = (400, 700)
+# if platform not in ["android", "ios"]:
+#     Window.size = (400, 700)
 
 Window.softinput_mode = 'below_target'
 
